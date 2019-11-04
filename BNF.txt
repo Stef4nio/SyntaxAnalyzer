@@ -1,0 +1,11 @@
+<if> =:: if(<bool expression>){<operator>;}|if(<bool expression>){<operator>;}else{<operator>;)
+<bool expression> =:: !<bool expression>|<statement><comparing sign><statement>|<bool expression><logical sign><bool expression>
+<statement> =:: <variable>|<string>|<integer>
+<comparing sign> =:: == | < | > | <= | >= | !=
+<logical sign> =:: || | && | ^^
+<variable> =:: variable name
+<string> =:: "[some text]"
+<integer> =:: [any number]
+
+для перевірки вкладених виразів треба виписати всі дужки в окремий масив, після чого проходити його з початку і рахувати кількість відкритих і закритих дужок,
+коли вони стануть рівні між собою, то тоді все, що між зовнішніми дужками залити рекурсивно на переобробку по тому ж алгоритму.
