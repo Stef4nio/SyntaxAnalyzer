@@ -1,0 +1,4 @@
+C:\Users\stef4\.CLion2019.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyzer"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyzer/cmake-build-debug
