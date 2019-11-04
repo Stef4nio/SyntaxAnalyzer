@@ -1,4 +1,4 @@
-# Install script for directory: /cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyzer
+# Install script for directory: /cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyser
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyzer/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyser/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

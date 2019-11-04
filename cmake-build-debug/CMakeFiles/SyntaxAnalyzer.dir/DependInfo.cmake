@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyzer/main.cpp" "/cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyzer/cmake-build-debug/CMakeFiles/SyntaxAnalyzer.dir/main.cpp.o"
+  "/cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyser/main.cpp" "/cygdrive/e/STEF/WORKSPACE(For C++)/SyntaxAnalyser/cmake-build-debug/CMakeFiles/SyntaxAnalyzer.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
