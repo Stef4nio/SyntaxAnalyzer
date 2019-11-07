@@ -3,9 +3,9 @@
 <statement> =:: <variable>|<string>|<integer>
 <comparing sign> =:: == | < | > | <= | >= | !=
 <logical sign> =:: || | && | ^^
+<operator>=:: <variable><appropriation sign><statement>;
 <variable> =:: variable name
 <string> =:: "[some text]"
 <integer> =:: [any number]
 
-для перевірки вкладених виразів треба виписати всі дужки в окремий масив, після чого проходити його з початку і рахувати кількість відкритих і закритих дужок,
-коли вони стануть рівні між собою, то тоді все, що між зовнішніми дужками залити рекурсивно на переобробку по тому ж алгоритму.
+TODO: add error handling to code
