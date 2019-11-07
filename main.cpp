@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 using namespace std;
 
 void clearAllSpaces(string *str)
@@ -43,24 +44,41 @@ bool isStatementComparingConstruction(string input)
 
 bool isBoolExpression(string input)
 {
-    if(input.find('(')!=string::npos&&input.find(')')!=string::npos)
-    {
-        int openedBracketIndex = -1;
-        int closedBracketIndex = -1;
-        int openedBracketsAmount = 0;
-        int closedBracketsAmount = 0;
-        for (int i = 0; i < input.length(); i++) {
-            if (input[i] == '(' && openedBracketIndex != -1)
-            {
-
-            }
-        }
-    }
-
     if(input[0] == '!')
     {
         input.erase(0,1);
-        return isBoolExpression(input);
+    }
+
+    int openedBracketIndex = input.find('(');
+    if(openedBracketIndex!=string::npos)
+    {
+        int closedBracketIndex = -1;
+        int openedBracketsAmount = 1;
+        int closedBracketsAmount = 0;
+        for (int i = openedBracketIndex+1;i < input.length(); i++)
+        {
+              if(input[i] == '(')
+              {
+                  openedBracketsAmount++;
+              } else if(input[i] == ')')
+              {
+                  closedBracketsAmount++;
+                  if(closedBracketsAmount == openedBracketsAmount)
+                  {
+                      closedBracketIndex = i;
+                      break;
+                  }
+              }
+        }
+        if(isBoolExpression(input.substr(openedBracketIndex+1,closedBracketIndex-openedBracketIndex-1)))
+        {
+            input.erase(openedBracketIndex,closedBracketIndex-openedBracketIndex+1);
+            input.insert(openedBracketIndex,"true");
+        }
+        else
+        {
+            return false;
+        }
     }
 
     if(input == "true" || input == "false")
@@ -68,7 +86,7 @@ bool isBoolExpression(string input)
         return true;
     }
 
-   /* if(input[0]>='0'&&input[0]<='9')
+    /* if(input[0]>='0'&&input[0]<='9')
     {
         cerr<<"Unallowed variable name."<<endl;
     }*/
@@ -101,7 +119,7 @@ bool isIfConstruction(string input)
     if(input.substr(0,3) == "if(")
     {
         input.erase(0,3);
-        if(isBoolExpression(input.substr(0,input.find(')'))))
+        if(isBoolExpression(input.substr(0,input.find("){"))))
         {
             cout<<"Everything is right";
             return true;
@@ -122,7 +140,8 @@ bool isIfConstruction(string input)
 int main() {
     string lol;
     getline(cin,lol);
-    //clearAllSpaces(&lol);
-    cout<<lol;
+    clearAllSpaces(&lol);
+
+    cout<<endl<<isIfConstruction(lol);
     return 0;
 }
