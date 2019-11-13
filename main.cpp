@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <regex>
 
 using namespace std;
 
@@ -17,9 +17,29 @@ void clearAllSpaces(string *str)
     str->append(resultString);
 }
 
+bool isAction(string input)
+{
+    return regex_match(input,regex("([^0-9\\W][_]?\\w+)[\\+*-\\/&^|][=](\\d+|[\"]{1}.*[\"]{1}|[^0-9\\W][_]?\\w+)"));
+}
+
+bool isVariable(string input)
+{
+    return regex_match(input,regex("[^0-9\\W][_]?\\w+"));
+}
+
+bool isString(string input)
+{
+    return regex_match(input,regex("[\"]{1}.*[\"]{1}"));
+}
+
+bool isInteger(string input)
+{
+    return regex_match(input,regex("\\d*"));
+}
+
 bool isStatement(string input)
 {
-
+    return isVariable(input)||isString(input)||isInteger(input);
 }
 
 bool isStatementComparingConstruction(string input)
@@ -110,6 +130,11 @@ bool isBoolExpression(string input)
         return isBoolExpression(input.substr(0,input.find("^")))&&isBoolExpression(input.substr(input.find("^")));
     }
 
+    if(isStatement(input))
+    {
+        return true;
+    }
+
     return false;
 }
 
@@ -126,7 +151,7 @@ bool isIfConstruction(string input)
         }
         else
         {
-            cerr<<"Error recognising your string expected <bool expression>, found "<<input.substr(0,input.find(')'))<<endl;
+            cerr<<"Error recognising your string expected <bool expression>, found "<<input.substr(0,input.find('){'))<<endl;
             return false;
         }
     }
