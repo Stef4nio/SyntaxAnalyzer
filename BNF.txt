@@ -1,11 +1,10 @@
-<if> =:: if(<bool expression>){<operator>;}|if(<bool expression>){<operator>;}else{<operator>;)
+<if> =:: if(<bool expression>){<action>;}|if(<bool expression>){<action>;}else{<action>;)
 <bool expression> =:: !<bool expression>|<statement><comparing sign><statement>|<bool expression><logical sign><bool expression>
 <statement> =:: <variable>|<string>|<integer>
 <comparing sign> =:: == | < | > | <= | >= | !=
 <logical sign> =:: || | && | ^^
-<operator>=:: <variable><appropriation sign><statement>;
+<action>=:: <variable><appropriation sign><statement>;
+<appropriation sign>=:: =|+=|-=|*=|/=;
 <variable> =:: variable name
 <string> =:: "[some text]"
 <integer> =:: [any number]
-
-TODO: add error handling to code
